@@ -1,0 +1,22 @@
+configuration {
+	modi: "window,run,ssh,drun";
+	theme: "mountaineer_dark";
+	width: 50;
+	lines: 8;
+	columns: 1;
+	font: "Iosevka Slab 14";
+	bw: 0;
+	padding: 600;
+	show-icons: false;
+	terminal: "st";
+	matching: "fuzzy";
+	line-margin: 14;
+	hide-scrollbar: true;
+	fullscreen: false;
+	fake-transparency: false;
+	dpi: 120;
+	color-normal: "argb:00000000, #ebdbb2, argb:00000000, argb:00000000, #d79921";
+	color-urgent: "argb:2ccc241d, #ebdbb2, argb:00000000, #a54242, #f9f9f9";
+	color-active: "argb:2ccc241d, #ebdbb2, argb:00000000, #4491ed, #f9f9f9";
+	color-window: "argb:fc282a36, #ebdbb2, argb:00000000";
+}

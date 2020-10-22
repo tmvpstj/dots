@@ -1,0 +1,61 @@
+XTerm*saveLines: 4096
+xterm*faceName: SFMono:size=12:antialias=true
+
+xterm*termName: xterm-256color
+xterm*scaleHeight: 1.0
+xterm*geometry: 52x12
+xterm*internalBorder: 55
+xterm*borderWidth: 0 
+
+xterm*utf8: true
+xterm*scrollBar: false
+xterm*cursorBlink: false
+xterm*selectToClipboard: true
+xterm*trimSelection: true
+xterm*renderFont: true
+xterm*wideChars: true
+xterm*visualBell: false
+
+xterm*translations: #override \n\
+    Shift Ctrl <KeyPress> v:insert-selection(CLIPBOARD) \n\
+    Shift Ctrl <KeyPress> c:select-set(CLIPBOARD)
+
+! Bliss Colorscheme
+! first color is regular, second is bright ver
+
+*.background: #1d2021
+*.foreground: #ebdbb2
+
+! black
+*.color0:  #1d2021
+*.color8:  #928374
+
+! red
+*.color1:  #cc241d
+*.color9:  #fb4934
+
+! green
+*.color2:  #98971a
+*.color10: #b8bb26
+
+! yellow
+*.color3:  #d79921
+*.color11: #fabd2f
+
+! blue
+*.color4:  #458588
+*.color12: #83a598
+
+! magenta
+*.color5:  #b16286
+*.color13: #d3869b
+
+! cyan
+*.color6:  #689d6a
+*.color14: #8ec07c
+
+! white
+*.color7:  #a89984
+*.color15: #ebdbb2
+
+! vim: ft=xdefaults
