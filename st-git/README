@@ -1,3 +1,6 @@
+My own version of st with patches for a bunch of stuff, just look at the .diffs in the folder for what patches there are.
+
+
 st - simple terminal
 --------------------
 st is a simple terminal emulator for X which sucks less.
