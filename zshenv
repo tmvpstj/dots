@@ -6,6 +6,3 @@ export XAUTHORITY="${XDG_CONFIG_HOME:-$HOME/etc/}x/xauth"
 export XINITRC="${XDG_CONFIG_HOME:-$HOME/etc/}x/xinitrc"
 
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/etc/}zsh"
-
-# Automatically added by Bedrock Linux
-. /bedrock/run/zprofile
