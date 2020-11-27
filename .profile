@@ -2,6 +2,9 @@
 # taken from https://github.com/kiedtl/dotfiles
 # doesnt work with zsh in its current state
 
+bind '^L=clear-screen'
+bind -m ^U='^[0^K'
+
 prompt() {
     mypwd=$(printf "$PWD" | \
         sed "s|$HOME|~|g")
