@@ -1,0 +1,7 @@
+prompt() {
+  mypwd=$(printf "$PWD" | \
+    sed "s|$HOME|~|g")
+  printf "$mypwd"
+  printf ' '
+}
+export PS1="\$(prompt)> "
