@@ -1,7 +1,7 @@
 call plug#begin('~/etc/nvim/plugged')
 Plug 'dense-analysis/ale'
 " Plug 'scrooloose/nerdtree'
-Plug 'fehawen/sl.vim'
+" Plug 'fehawen/sl.vim'
 Plug 'fehawen/cs.vim'
 Plug 'co1ncidence/bliss'
 Plug 'co1ncidence/itai.vim'
@@ -50,5 +50,5 @@ source $HOME/etc/nvim/statusline.vim
 hi bl ctermfg=8
 hi gr ctermfg=7
 set laststatus=0
-set rulerformat=%30(%=%#bl#%l,%c\ \ %#gr#%t%)
+set rulerformat=%30(%=%#bl#%l,%c\ \%#bl#%p%%\ \ %#gr#%t%)
 
