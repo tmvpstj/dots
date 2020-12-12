@@ -23,39 +23,39 @@ xterm*translations: #override \n\
 ! Bliss Colorscheme
 ! first color is regular, second is bright ver
 
-*.background: #1d2021
-*.foreground: #ebdbb2
+*.background: #101010
+*.foreground: #999993
 
 ! black
-*.color0:  #1d2021
-*.color8:  #928374
+*.color0:  #9d9eca
+*.color8:  #3d3d3d
 
 ! red
-*.color1:  #cc241d
-*.color9:  #fb4934
+*.color1:  #8c4665
+*.color9:  #bf4d80
 
 ! green
-*.color2:  #98971a
-*.color10: #b8bb26
+*.color2:  #287373
+*.color10: #53a6a6
 
 ! yellow
-*.color3:  #d79921
-*.color11: #fabd2f
+*.color3:  #7c7c99
+*.color11: #9e9ecb
 
 ! blue
-*.color4:  #458588
-*.color12: #83a598
+*.color4:  #395573
+*.color12: #477ab3
 
 ! magenta
-*.color5:  #b16286
-*.color13: #d3869b
+*.color5:  #5e468c
+*.color13: #7e62b3
 
 ! cyan
-*.color6:  #689d6a
-*.color14: #8ec07c
+*.color6:  #31658c
+*.color14: #6096bf
 
 ! white
-*.color7:  #a89984
-*.color15: #ebdbb2
+*.color7:  #899ca1
+*.color15: #c0c0c0
 
 ! vim: ft=xdefaults
