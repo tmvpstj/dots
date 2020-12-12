@@ -1,0 +1,10 @@
+bind '^L=clear-screen'
+bind -m ^U='^[0^K'
+
+prompt() {
+  mypwd=$(printf "$PWD" | \
+    sed "s|$HOME|~|g")
+  printf "$mypwd"
+  printf ' '
+}
+export PS1="\$(prompt)> "
