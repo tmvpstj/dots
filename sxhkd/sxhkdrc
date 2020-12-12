@@ -1,0 +1,27 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+	st
+
+# program launcher
+super + d
+	rofi -show drun
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+XF86AudioRaiseVolume
+	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%" && herbe volume $(pactl list sinks | grep '^[[:space:]]Volume:' | \
+    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')%
+
+
+XF86AudioLowerVolume
+	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%" && herbe volume $(pactl list sinks | grep '^[[:space:]]Volume:' | \
+    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')%
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle && herbe "volume muted"
