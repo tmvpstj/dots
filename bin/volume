@@ -1,0 +1,25 @@
+#!/bin/sh
+
+MUTED=$(pamixer --get-mute)
+VOLUME=$(pamixer --get-volume)
+HERBERUN=$(pgrep -x herbe)
+
+if [ -n $HERBERUN ]
+then
+	pkill herbe
+fi
+
+if [ $1 = m ]
+then
+	if [ $MUTED = false ] 
+	then 
+		echo "unmuted" 
+	else
+		echo "muted"
+	fi
+fi
+
+if [ $1 = v ]
+then
+	echo $VOLUME
+fi

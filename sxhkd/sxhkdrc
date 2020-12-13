@@ -15,13 +15,10 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 XF86AudioRaiseVolume
-	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%" && herbe volume $(pactl list sinks | grep '^[[:space:]]Volume:' | \
-    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')%
-
+	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%" && herbe volume $(volume v)%
 
 XF86AudioLowerVolume
-	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%" && herbe volume $(pactl list sinks | grep '^[[:space:]]Volume:' | \
-    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')%
+	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%" && herbe volume $(volume v)%
 
 XF86AudioMute
-	pactl set-sink-mute 0 toggle && herbe "volume muted"
+	pactl set-sink-mute 0 toggle && herbe $(muted m)
