@@ -1,8 +1,9 @@
 #!/bin/sh
 
-xrandr --output Virtual1 --mode 1360x768 --rate 144.00 &
+xrandr --output Virtual1 --mode 1600x900_144.00 &
 ~/.fehbg &
 xrdb -load ~/etc/x/xresources &
+~/barlaunch.sh | lemonbar -g 185x30+15+15 -b -f "SF Mono:normal:size=10" &
 pgrep -x sxhkd || sxhkd -c ~/etc/sxhkd/sxhkdrc &
 st &
 exec 2bwm
