@@ -10,3 +10,5 @@ export XINITRC="${XDG_CONFIG_HOME:-$HOME/etc/}x/xinitrc"
 
 export ENV="${XDG_CONFIG_HOME:-$HOME/etc/}/shrc"
 export HISTFILE="${XDG_CONFIG_HOME:-$HOME/etc/}/hist"
+
+export PULSE_COOKIE="${XDG_CONFIG_HOME:-$HOME/etc/}/pulse"
