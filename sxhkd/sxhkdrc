@@ -15,7 +15,11 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 super + alt + v
+<<<<<<< HEAD
 	herbe volume $(volume v)
+=======
+	herbe volume $(volume v)%
+>>>>>>> b24b1f5443a3538fa40d57c556856f2487df9b63
 
 XF86AudioRaiseVolume
 	pamixer -i 5 && herbe volume $(volume v)
