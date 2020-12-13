@@ -1,5 +1,5 @@
-bind '^L=clear-screen'
-bind -m ^U='^[0^K'
+# bind '^L=clear-screen'
+# bind -m ^U='^[0^K'
 
 prompt() {
   mypwd=$(printf "$PWD" | \
@@ -8,3 +8,5 @@ prompt() {
   printf ' '
 }
 export PS1="\$(prompt)> "
+alias startx="startx /home/lain/etc/x/xinitrc"
+alias volset="pactl set-sink-volume 0"
