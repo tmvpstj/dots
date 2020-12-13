@@ -1,0 +1,8 @@
+#!/bin/sh
+
+xrandr --output Virtual1 --mode 1360x768 --rate 144.00 &
+~/.fehbg &
+xrdb -load ~/etc/x/xresources &
+pgrep -x sxhkd || sxhkd -c ~/etc/sxhkd/sxhkdrc &
+st &
+exec 2bwm

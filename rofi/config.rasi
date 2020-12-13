@@ -4,7 +4,7 @@ configuration {
 	width: 50;
 	lines: 8;
 	columns: 1;
-	font: "Iosevka Slab 14";
+	font: "SF Mono 12";
 	bw: 0;
 	padding: 600;
 	show-icons: false;
