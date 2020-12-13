@@ -14,18 +14,17 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# output current volume with herbe
+super + alt + t
+	herbe "it is $(date +%H:%M)" "on $(date +%a\ %m/%d/%y%)"
+
 super + alt + v
 	herbe volume $(volume v)
 
-# raise current volume by 5% and output the new volume with herbe
 XF86AudioRaiseVolume
 	pamixer -i 5 && herbe volume $(volume v)
 
-# lower current volume by 5% and ouput the new volume with herbe
 XF86AudioLowerVolume
 	pamixer -d 5 && herbe volume $(volume v)
 
-# toggle mute and print current volume or "volume muted"
 XF86AudioMute
 	pamixer -t && herbe volume $(volume m)
