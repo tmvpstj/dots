@@ -1,6 +1,10 @@
 # bind '^L=clear-screen'
 # bind -m ^U='^[0^K'
 
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	exec startx /home/lain/etc/x/xinitrc
+fi
+
 prompt() {
   mypwd=$(printf "$PWD" | \
     sed "s|$HOME|~|g")

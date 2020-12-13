@@ -1,6 +1,5 @@
 #!/bin/sh
 
-MUTED=$(pamixer --get-mute)
 VOLUME=$(pamixer --get-volume-human)
 HERBERUN=$(pgrep -x herbe)
 
@@ -9,12 +8,4 @@ then
 	pkill herbe
 fi
 
-if [ $1 = m ] 
-then
-	echo $(pamixer --get-volume-human)
-fi
-
-if [ $1 = v ]
-then
-	echo $VOLUME
-fi
+echo $VOLUME
