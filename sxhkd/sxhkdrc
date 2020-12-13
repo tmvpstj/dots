@@ -15,7 +15,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 super + alt + v
-	herbe volume $(pamixer --get-volume)%
+	herbe volume $(volume v)%
 
 XF86AudioRaiseVolume
 	sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%" && herbe volume $(volume v)%
