@@ -8,9 +8,6 @@ fi
 prompt() {
   mypwd=$(printf "$PWD" | \
     sed "s|$HOME|~|g")
-  if [ $mypwd != "~" ]; then
-    mypwd="$(basename ${mypwd%/*})/$(basename ${mypwd})"
-  fi
   printf "$mypwd"
   printf ' '
   # printf $(date +%k:%M:%S)
@@ -24,6 +21,6 @@ prompt() {
 # for dark colors replace 0 with 1
 
 # export PS1="\$(prompt)> "
-export PS1="\e[1;31m\$(prompt)\e[0m\t > "
+export PS1="\e[1;31m\$(prompt)\e[0m> "
 alias startx="startx /home/lain/etc/x/xinitrc"
 alias volset="pactl set-sink-volume 0"
