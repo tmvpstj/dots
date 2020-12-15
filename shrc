@@ -6,21 +6,36 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 fi
 
 prompt() {
+  # picks random number in this range
+  promptcol=$(shuf --input-range=30-35 | tail -n 1)
+
+  # print the current working directory and replace $HOME with ~
   mypwd=$(printf "$PWD" | \
     sed "s|$HOME|~|g")
-  printf "$mypwd"
+
+  # print the working directory with the color escapes in it
+  # to get rid of random color comment out lines 1,2,3,8
+  # line 6 prints date in the prompt, to get rid of it comment it out
+  # to remove color from the date put it after the line that prints "\e[0m"
+  printf "\e[1;"
+  printf $promptcol
+  printf "m"
+  printf $mypwd
   printf ' '
-  # printf $(date +%k:%M:%S)
-  # printf ' '
+  printf $(date +%k:%M:%S)
+  printf ' '
+  printf "\e[0m"
 }
 
 
-# for colored prompt use the one already set, for no color uncomment the one above it
-# to remove the time from the prompt get rid of the \t at the end
+# current prompt uses random color from shuf, to get no color or constant color comment out the line
+# "printf $promptcol" 
+# to set a constant color comment out the current prompt and uncomment the one above 
+# use the codes below to choose a color
 # color escape codes: black 0;30, blue 0;34, green 0;32, cyan 0;36, red 0;31, purple 0;35, brown 0;33
 # for dark colors replace 0 with 1
 
-# export PS1="\$(prompt)> "
-export PS1="\e[1;31m\$(prompt)\e[0m> "
+# export PS1="\e[1;34m\$(prompt)\e[0m> "
+export PS1="\$(prompt)> " 
 alias startx="startx /home/lain/etc/x/xinitrc"
 alias volset="pactl set-sink-volume 0"
