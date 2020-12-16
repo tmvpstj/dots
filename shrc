@@ -8,9 +8,22 @@ fi
 prompt() {
   mypwd=$(printf "$PWD" | \
     sed "s|$HOME|~|g")
+  if [ $mypwd != "~" ]; then
+    mypwd="$(basename ${mypwd%/*})/$(basename ${mypwd})"
+  fi
   printf "$mypwd"
   printf ' '
+  # printf $(date +%k:%M:%S)
+  # printf ' '
 }
-export PS1="\$(prompt)> "
+
+
+# for colored prompt use the one already set, for no color uncomment the one above it
+# to remove the time from the prompt get rid of the \t at the end
+# color escape codes: black 0;30, blue 0;34, green 0;32, cyan 0;36, red 0;31, purple 0;35, brown 0;33
+# for dark colors replace 0 with 1
+
+# export PS1="\$(prompt)> "
+export PS1="\e[1;31m\$(prompt)\e[0m\t > "
 alias startx="startx /home/lain/etc/x/xinitrc"
 alias volset="pactl set-sink-volume 0"
