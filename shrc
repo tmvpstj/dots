@@ -21,9 +21,11 @@ prompt() {
   printf $promptcol
   printf "m"
   printf $mypwd
+  printf " @ "
+  printf $(date +%k:%M:%S)
   printf ' '
-  # printf $(date +%k:%M:%S)
-  # printf ' '
+  printf '\n'
+  printf '%s' "➜"
   printf "\e[0m"
 }
 
@@ -39,6 +41,6 @@ prompt() {
 
 # export PS1="\e[46m\ $(prompt) " 
 # export PS1="\e[1;34m\$(prompt)\e[0m> "
-export PS1="\$(prompt)> " 
+export PS1="\$(prompt) " 
 alias startx="startx /home/lain/etc/x/xinitrc"
 alias volset="pactl set-sink-volume $SINK"
