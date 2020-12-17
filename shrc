@@ -25,7 +25,7 @@ prompt() {
   printf $(date +%k:%M:%S)
   printf ' '
   printf '\n'
-  printf '%s' "➜"
+  printf '%s' "→"
   printf "\e[0m"
 }
 
