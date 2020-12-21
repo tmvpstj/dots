@@ -1,0 +1,10 @@
+#!/bin/sh
+
+wlprandom() {
+	echo $(shuf -e $(ls -1 $HOME/wlp) | tail -n 1)
+}
+
+while true ; do
+	bgset -h fill $HOME/wlp/$(wlprandom)
+	sleep 5
+done
