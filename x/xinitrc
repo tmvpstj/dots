@@ -1,10 +1,13 @@
 #!/bin/sh
 
-xrandr --output Virtual1 --mode 1600x900_144.00 &
-~/.fehbg &
+xrandr --output Virtual1 --mode 1440x900
+picom &
+~/bin/wlpset.sh &
 xrdb -load ~/etc/x/xresources &
-~/bin/bartime.sh | lemonbar -g 205x30+15+15 -b -f "SF Mono:normal:size=10" &
-~/bin/barvol.sh | lemonbar -g 120x30+1465+15 -b -f "SF Mono:normal:size=10" &
+# ~/bin/bartime.sh | lemonbar -g 180x30+15+15 -b -f "Iosevka:normal:size=10" &
+~/bin/bigbar.sh | lemonbar -g 270x30+15+15 -b -f "Iosevka:normal:size=10" &
+# ~/bin/barcpu.sh | lemonbar -g 140x30+1285+15 -B '#101010' -b -f "SF Mono:normal:size=10" &
 pgrep -x sxhkd || sxhkd -c ~/etc/sxhkd/sxhkdrc &
-st &
+pgrep -x pulseaudio || pulseaudio --daemonize &
+# st &
 exec 2bwm
