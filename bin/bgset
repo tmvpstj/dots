@@ -5,6 +5,12 @@
 LASTWLP="$(cat $HOME/bin/wlpset.sh | tail -n 1 | awk '{print $4}')"
 WLPDIR='realpath $3'
 
+wlpscript() {
+	ls $HOME | grep -x bin >> /dev/null || mkdir -p $HOME/bin
+	echo '#!/bin/sh' > $HOME/bin/wlpset.sh
+	chmod 755 $HOME/bin/wlpset.sh
+}
+
 case $1 in
 	-v)
 		# VIEW CURRENT BACKGROUND (IF SET BY THIS SCRIPT)
@@ -13,36 +19,23 @@ case $1 in
 	-h)
 		# HSETROOT
 		hsetroot -$2 $3 >> /dev/null
+		$(wlpscript)
+		echo $0 $1 $2 $(realpath $3) >> $HOME/bin/wlpset.sh
 		;;
 	-f)
 		# FEH
 		feh --bg-$2 $3 && rm ~/.fehbg
+		$(wlpscript)
+		echo $0 $1 $2 $(realpath $3) >> $HOME/bin/wlpset.sh
 		;;
 	-b)
 		# BLUR
 		ls $HOME | grep -x wlp >> /dev/null || mkdir -p $HOME/wlp
 		convert -blur $3 $4 $HOME/wlp/wlp.png && hsetroot -$2 $HOME/wlp/wlp.png >> /dev/null
+		$(wlpscript)
+		echo $0 $1 $2 $HOME/wlp/wlp.png >> $HOME/bin/wlpset.sh
 		;;
 	*)
 		echo "options: \n -v displays current wallpaper (if set with this script) using sxiv\n -h (fill, tile, etc.) /path/to/file sets bg with hsetroot \n -f (fill, tile, etc.) sets bg with feh and removes .fehbg \n -b (fill, tile, etc.) (radius)x(sigma) /path/to file blurs the image with the settings of your choice and sets the background with hsetroot \nall options check for a ~/bin folder and creates if it doesn\'t exist, then create a shell script to automatically set the background you input" 
 		;;
 esac
-
-
-if [ -n "$1" ]
-then
-	if [ "$1" = "-v" ]
-	then
-		break 2
-	else
-		ls $HOME | grep -x bin >> /dev/null || mkdir -p $HOME/bin
-		echo '#!/bin/sh' > $HOME/bin/wlpset.sh
-		chmod 755 $HOME/bin/wlpset.sh
-		if [ "$1" = "-b" ]
-		then
-			echo $0 $1 $2 $HOME/wlp/wlp.png >> $HOME/bin/wlpset.sh
-		else
-			echo $0 $1 $2 $(realpath $3) >> $HOME/bin/wlpset.sh
-		fi
-	fi
-fi
