@@ -7,7 +7,7 @@ fi
 
 prompt() {
   # picks random number in this range
-  promptcol=$(shuf --input-range=30-35 | tail -n 1)
+  promptcol=$(shuf -i 30-35 | tail -n 1)
 
   # print the current working directory and replace $HOME with ~
   mypwd=$(printf "$PWD" | \
@@ -17,16 +17,17 @@ prompt() {
   # to get rid of random color comment out lines 1,2,3,8
   # line 6 prints date in the prompt, to get rid of it comment it out
   # to remove color from the date put it after the line that prints "\e[0m"
-  printf '\e[1;'
+  printf '[1;'
   printf $promptcol
+  # printf '34'
   printf "m"
   printf $mypwd
   printf " @ "
   printf $(date +%k:%M:%S)
   printf ' '
   printf '\n'
-  printf '%s' "→"
-  printf "\e[0m"
+  printf '%s' ">"
+  printf "[0m"
 }
 
 
