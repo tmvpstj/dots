@@ -14,6 +14,15 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super + shift + i
+	hidden -c|xargs 9menu -popup -label Iconics
+
+super + e
+	pcmanfm
+
+ctrl + alt + p
+	maim -s | xclip -selection clipboard -t image/png
+
 super + alt + t
 	herbe "it is $(date +%H:%M)" "on $(date +%a\ %m/%d/%y%)"
 
