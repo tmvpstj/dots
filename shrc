@@ -17,16 +17,17 @@ prompt() {
   # to get rid of random color comment out lines 1,2,3,8
   # line 6 prints date in the prompt, to get rid of it comment it out
   # to remove color from the date put it after the line that prints "\e[0m"
-  printf '[1;'
-  printf $promptcol
-  # printf '34'
-  printf "m"
-  printf $mypwd
-  printf " @ "
-  printf $(date +%k:%M:%S)
+  printf '[1;30m'
+  printf '[47m'
+  # printf $promptcol
   printf ' '
-  printf '\n'
-  printf '%s' ">"
+  # printf $mypwd
+  printf '\w'
+  # printf " @ "
+  # printf $(date +%k:%M:%S)
+  printf ' '
+  # printf '\n'
+  # printf '%s' ">"
   printf "[0m"
 }
 
