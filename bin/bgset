@@ -2,7 +2,7 @@
 # sets wallpaper with choice of feh, hsetroot, or hsetroot with blur applied
 # it creates a script in the ~/bin folder that can also be used to automatically
 # set the wallpaper again for something like xinit or a wm rc file
-LASTWLP="$(cat $HOME/bin/wlpset.sh | tail -n 1 | awk '{print $4}')"
+LASTWLP="$(tail -n 1 < "$HOME"/bin/wlpset.sh | awk '{print $4}')"
 WLPDIR='realpath $3'
 
 wlpscript() {
@@ -20,13 +20,13 @@ case $1 in
 		# HSETROOT
 		hsetroot -$2 $3 >> /dev/null
 		$(wlpscript)
-		echo $0 $1 $2 $(realpath $3) >> $HOME/bin/wlpset.sh
+		echo $0 $1 $2 $WLPDIR >> $HOME/bin/wlpset.sh
 		;;
 	-f)
 		# FEH
 		feh --bg-$2 $3 && rm ~/.fehbg
 		$(wlpscript)
-		echo $0 $1 $2 $(realpath $3) >> $HOME/bin/wlpset.sh
+		echo $0 $1 $2 $WLPDIR >> $HOME/bin/wlpset.sh
 		;;
 	-b)
 		# BLUR
