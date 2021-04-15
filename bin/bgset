@@ -3,7 +3,7 @@
 # it creates a script in the ~/bin folder that can also be used to automatically
 # set the wallpaper again for something like xinit or a wm rc file
 LASTWLP="$(tail -n 1 < "$HOME"/bin/wlpset.sh | awk '{print $4}')"
-WLPDIR="realpath $3"
+WLPDIR=`realpath $3`
 
 wlpscript() {
 	[ -d "$HOME"/bin ] || mkdir -p "$HOME"/bin
