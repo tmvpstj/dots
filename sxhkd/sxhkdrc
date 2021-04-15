@@ -24,7 +24,7 @@ ctrl + alt + p
 	maim -s | xclip -selection clipboard -t image/png
 
 super + alt + t
-	herbe "it is $(date +%H:%M)" "on $(date +%a\ %m/%d/%y%)"
+	herbe "it is $(date +%H:%M)" "on $(date +%a\ %m/%d/%y)"
 
 super + alt + v
 	herbe volume $(volume v)
