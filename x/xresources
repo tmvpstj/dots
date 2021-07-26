@@ -19,6 +19,22 @@ xterm*visualBell: false
 xterm*translations: #override \n\
     Shift Ctrl <KeyPress> v:insert-selection(CLIPBOARD) \n\
     Shift Ctrl <KeyPress> c:select-set(CLIPBOARD)
+    
+! URxvt stuff
+
+URxvt.font: xft:sfmono:size=12
+URxvt.scrollBar: false
+URxvt.internalBorder: 55
+URxvt.utf8: true
+URxvt.wideChars: true
+URxvt.print-pipe: "cat > /dev/null"
+URxvt.saveline: 2048
+URxvt.urgentOnBell: false
+URxvt.depth: 24
+URxvt.iso14755: false
+URxvt.termName: xterm-256color
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: true
 
 ! Bliss Colorscheme
 ! first color is regular, second is bright ver
