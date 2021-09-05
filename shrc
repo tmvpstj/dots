@@ -46,3 +46,6 @@ prompt() {
 export PS1="\$(prompt) " 
 alias startx="startx /home/lain/etc/x/xinitrc"
 alias volset="pactl set-sink-volume $SINK"
+
+export EDITOR=nvim
+export VISUAL=$EDITOR
