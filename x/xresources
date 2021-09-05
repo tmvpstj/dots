@@ -1,5 +1,5 @@
 XTerm*saveLines: 4096
-xterm*faceName: SFMono:size=12:antialias=true
+xterm*faceName: tewi:size=14:antialias=true
 
 xterm*termName: xterm-256color
 xterm*scaleHeight: 1.0
@@ -22,9 +22,10 @@ xterm*translations: #override \n\
     
 ! URxvt stuff
 
-URxvt.font: xft:sfmono:size=12
+URxvt.font: xft:cherry:size=13
 URxvt.scrollBar: false
 URxvt.internalBorder: 55
+URxvt.geometry: 72x24
 URxvt.utf8: true
 URxvt.wideChars: true
 URxvt.print-pipe: "cat > /dev/null"
@@ -39,39 +40,39 @@ URxvt.cursorUnderline: true
 ! Bliss Colorscheme
 ! first color is regular, second is bright ver
 
-*.background: #999999
-*.foreground: #101010
+*.background: #0e0e0e
+*.foreground: #f8f8f8
 
 ! black
-*.color0:  #101010
-*.color8:  #3d3d3d
+*.color0:  #0e0e0e
+*.color8:  #494949
 
 ! red
-*.color1:  #8c4665
-*.color9:  #bf4d80
+*.color1:  #c93838
+*.color9:  #cc5757
 
 ! green
-*.color2:  #287373
-*.color10: #53a6a6
+*.color2:  #5c9070
+*.color10: #7bb792
 
 ! yellow
-*.color3:  #7c7c99
-*.color11: #9e9ecb
+*.color3:  #b98fb5
+*.color11: #d8b3d5
 
 ! blue
-*.color4:  #395573
-*.color12: #477ab3
+*.color4:  #80a7d6
+*.color12: #a8c0dd
 
 ! magenta
-*.color5:  #5e468c
-*.color13: #7e62b3
+*.color5:  #afb0e8
+*.color13: #d1d2f9
 
 ! cyan
-*.color6:  #31658c
-*.color14: #6096bf
+*.color6:  #78b4d5
+*.color14: #96c5dd
 
 ! white
-*.color7:  #899ca1
-*.color15: #c0c0c0
+*.color7:  #c3dae0
+*.color15: #e2e2e2
 
 ! vim: ft=xdefaults
