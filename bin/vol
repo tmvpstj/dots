@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ -n $(pgrep -x herbe) ]
+then
+	pkill herbe
+fi
+
+
+case $1 in 
+	i)
+		pamixer -i $2
+		;;
+	d)
+		pamixer -d $2
+		;;
+	m)
+		pamixer -t
+		;;
+	*)
+		break
+		;;
+esac
+
+herbe volume $(pamixer --get-volume-human)

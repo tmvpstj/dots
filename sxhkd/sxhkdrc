@@ -6,6 +6,9 @@
 super + Return
 	st
 
+super + shift + Return
+	drawterm
+
 # program launcher
 super + d
 	rofi -show drun
@@ -20,11 +23,11 @@ super + shift + i
 super + e
 	pcmanfm
 
-ctrl + alt + p
+super + p
 	maim -s | xclip -selection clipboard -t image/png
 
 super + alt + t
-	herbe "it is $(date +%H:%M)" "on $(date +%a\ %m/%d/%y)"
+	herbe "it is $(date +%I:%M:%S)" "on $(date +%a\ %m/%d/%y)"
 
 super + alt + v
 	herbe volume $(volume v)

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 Clock() {
-	TIME=$(date +%H:%M:%S)
+	TIME=$(date +%I:%M:%S)
 	DATE=$(date +%a\ %m/%d/%y)
 
 	echo -n "$TIME on $DATE"
@@ -20,6 +20,6 @@ volume() {
 }
 
 while true; do
-	echo "%{l}%{F#999999}%{B#101010} $(Clock) | $(volume) %{F-}%{B-}"
+	echo "%{l}%{F#f8f8f8}%{B#0e0e0e} %{A:rofi -show drun:} rofi %{A}                                                                                                                                                                                                                                                                                                                                $(Clock) | $(volume)    %{F-}%{B-}"
 	sleep .1
 done

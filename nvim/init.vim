@@ -3,8 +3,6 @@ Plug 'dense-analysis/ale'
 " Plug 'scrooloose/nerdtree'
 " Plug 'fehawen/sl.vim'
 Plug 'fehawen/cs.vim'
-Plug 'co1ncidence/bliss'
-Plug 'co1ncidence/itai.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -16,7 +14,7 @@ call plug#end()
 
 " set termguicolors
 set background=dark
-colorscheme plain
+colorscheme rose-pine-dark
 
 set nonumber
 syntax on

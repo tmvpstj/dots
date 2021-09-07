@@ -1,0 +1,13 @@
+#!/bin/sh
+# all size in pixels
+wf=7  # font width
+hf=15 # font height
+ib=8  # terminal inner border
+ob=8  # window manager border
+
+xrectsel '%w %h %x %y' | {
+    read w h x y
+    w=$(( ( w - (ib + ob)*2 ) / wf ))
+    h=$(( ( h - (ib + ob)*2 ) / hf ))
+    exec st -g ${w}x${h}+${x}+${y}
+}

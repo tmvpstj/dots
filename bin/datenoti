@@ -1,0 +1,3 @@
+#!/bin/sh
+
+herbe "it is $(date +%I:%M:%S)" "on $(date +%a\ %m/%d/%y)"

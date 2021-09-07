@@ -1,13 +1,15 @@
 #!/bin/sh
 
-xrandr --output Virtual1 --mode 1440x900
+xrandr --output DisplayPort-1 --primary --mode 2560x1440 --rate 143.97 --pos 1920x0 --rotate normal --output DisplayPort-2 --mode 1920x1080 --rate 144.00 --pos 0x360 --rotate normal 
 picom &
-~/bin/wlpset.sh &
+~/bin/wlpset &
 xrdb -load ~/etc/x/xresources &
-# ~/bin/bartime.sh | lemonbar -g 180x30+15+15 -b -f "Iosevka:normal:size=10" &
-~/bin/bigbar.sh | lemonbar -g 270x30+15+15 -b -f "Iosevka:normal:size=10" &
+# ~/bin/bigbar.sh | lemonbar -g 2560x30+1920+0 -b -f "Fantasque Sans Mono:normal:size=10"| sh &
 # ~/bin/barcpu.sh | lemonbar -g 140x30+1285+15 -B '#101010' -b -f "SF Mono:normal:size=10" &
-pgrep -x sxhkd || sxhkd -c ~/etc/sxhkd/sxhkdrc &
-pgrep -x pulseaudio || pulseaudio --daemonize &
+# pgrep -x sxhkd || sxhkd -c ~/etc/sxhkd/sxhkdrc &
+xinput set-button-map 12 1 2 3 4 5 6 7 6 7 &
+# pgrep -x pulseaudio || pulseaudio --daemonize &
 # st &
-exec 2bwm
+pipewire &
+pipewire-pulse &
+exec cwm

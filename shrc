@@ -1,13 +1,10 @@
 # bind '^L=clear-screen'
 # bind -m ^U='^[0^K'
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-	exec startx /home/lain/etc/x/xinitrc
-fi
 
 prompt() {
   # picks random number in this range
-  promptcol=$(shuf -i 30-35 | tail -n 1)
+  # promptcol=$(shuf -i 30-35 | tail -n 1)
 
   # print the current working directory and replace $HOME with ~
   mypwd=$(printf "$PWD" | \
@@ -18,8 +15,8 @@ prompt() {
   # line 6 prints date in the prompt, to get rid of it comment it out
   # to remove color from the date put it after the line that prints "\e[0m"
   printf '[1;30m'
-  printf '[47m'
   # printf $promptcol
+  printf '[47m'
   printf ' '
   # printf $mypwd
   printf '\w'
@@ -44,8 +41,17 @@ prompt() {
 # export PS1="\e[46m\ $(prompt) " 
 # export PS1="\e[1;34m\$(prompt)\e[0m> "
 export PS1="\$(prompt) " 
+export TERM="st-256color"
 alias startx="startx /home/lain/etc/x/xinitrc"
 alias volset="pactl set-sink-volume $SINK"
+alias lsal="exa -al"
+alias lsa="exa -a"
+alias lsl="exa -l"
+alias lsalh="exa -alh"
+alias ls="exa"
+alias xbpi="doas xbps-install -S"
+alias xbpq="xbps-query -Rs"
+alias xbpr="doas xbps-remove"
 
 export EDITOR=nvim
 export VISUAL=$EDITOR

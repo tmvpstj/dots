@@ -1,5 +1,5 @@
 XTerm*saveLines: 4096
-xterm*faceName: tewi:size=14:antialias=true
+xterm*faceName: tamzen:size=12:antialias=true
 
 xterm*termName: xterm-256color
 xterm*scaleHeight: 1.0
@@ -48,8 +48,8 @@ URxvt.cursorUnderline: true
 *.color8:  #494949
 
 ! red
-*.color1:  #c93838
-*.color9:  #cc5757
+*.color1:  #ce468a
+*.color9:  #db6ba3
 
 ! green
 *.color2:  #5c9070

@@ -2,13 +2,13 @@
 # sets wallpaper with choice of feh, hsetroot, or hsetroot with blur applied
 # it creates a script in the ~/bin folder that can also be used to automatically
 # set the wallpaper again for something like xinit or a wm rc file
-LASTWLP="$(tail -n 1 < "$HOME"/bin/wlpset.sh | awk '{print $4}')"
+LASTWLP="$(tail -n 1 < "$HOME"/bin/wlpset | awk '{print $4}')"
 WLPDIR=`realpath $3`
 
 wlpscript() {
 	[ -d "$HOME"/bin ] || mkdir -p "$HOME"/bin
-	echo '#!/bin/sh' > "$HOME"/bin/wlpset.sh
-	chmod 755 "$HOME"/bin/wlpset.sh
+	echo '#!/bin/sh' > "$HOME"/bin/wlpset
+	chmod 755 "$HOME"/bin/wlpset
 }
 
 case $1 in
@@ -20,20 +20,20 @@ case $1 in
 		# HSETROOT
 		hsetroot -"$2" "$3" >> /dev/null
 		wlpscript
-		echo "$0" "$1" "$2" "$WLPDIR" >> "$HOME"/bin/wlpset.sh
+		echo "$0" "$1" "$2" "$WLPDIR" >> "$HOME"/bin/wlpset
 		;;
 	-f)
 		# FEH
 		feh --bg-"$2" "$3" && rm ~/.fehbg
 		wlpscript
-		echo "$0" "$1" "$2" "$WLPDIR" >> "$HOME"/bin/wlpset.sh
+		echo "$0" "$1" "$2" "$WLPDIR" >> "$HOME"/bin/wlpset
 		;;
 	-b)
 		# BLUR
 		[ -d "$HOME"/wlp ] || mkdir -p "$HOME"/wlp
 		convert -blur "$3" "$4" "$HOME"/wlp/wlp.png && hsetroot -"$2" "$HOME"/wlp/wlp.png >> /dev/null
 		wlpscript
-		echo "$0" -h "$2" "$HOME"/wlp/wlp.png >> "$HOME"/bin/wlpset.sh
+		echo "$0" -h "$2" "$HOME"/wlp/wlp.png >> "$HOME"/bin/wlpset
 		;;
 	*)
 		cat <<- 'END_TEXT'
