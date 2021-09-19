@@ -1,5 +1,5 @@
 XTerm*saveLines: 4096
-xterm*faceName: tamzen:size=12:antialias=true
+xterm*faceName: IBM Plex Mono:size=10:antialias=true
 
 xterm*termName: xterm-256color
 xterm*scaleHeight: 1.0
@@ -22,7 +22,7 @@ xterm*translations: #override \n\
     
 ! URxvt stuff
 
-URxvt.font: xft:cherry:size=13
+URxvt.font: xft:IBM Plex Mono:size=10:antialias=true
 URxvt.scrollBar: false
 URxvt.internalBorder: 55
 URxvt.geometry: 72x24
@@ -36,6 +36,7 @@ URxvt.iso14755: false
 URxvt.termName: xterm-256color
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: true
+URxvt.borderColor: #0e0e0e
 
 ! Bliss Colorscheme
 ! first color is regular, second is bright ver
@@ -72,7 +73,7 @@ URxvt.cursorUnderline: true
 *.color14: #96c5dd
 
 ! white
-*.color7:  #c3dae0
-*.color15: #e2e2e2
+*.color7:  #fefefe
+*.color15: #fefefe
 
 ! vim: ft=xdefaults

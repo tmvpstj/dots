@@ -19,7 +19,14 @@ volume() {
 	echo -n "volume $REALVOLUME"
 }
 
+# wifi() {
+	# while true; do
+		# echo $(iw wlan0 info | grep -oP '(?<=ssid ).*$')
+		# sleep 10
+	# done
+# }
+
 while true; do
-	echo "%{l}%{F#f8f8f8}%{B#0e0e0e} %{A:rofi -show drun:} rofi %{A}                                                                                                                                                                                                                                                                                                                                $(Clock) | $(volume)    %{F-}%{B-}"
+	echo "%{l}%{F#f8f8f8}%{B#0e0e0e} %{A:rofi -show drun:} rofi %{A}                                                                                                                                                                                                                                                                                                                           $(Clock) | $(volume)    %{F-}%{B-}"
 	sleep .1
 done

@@ -1,49 +1,25 @@
-# bind '^L=clear-screen'
+bind '^L=clear-screen'
 # bind -m ^U='^[0^K'
 
-
 prompt() {
-  # picks random number in this range
-  # promptcol=$(shuf -i 30-35 | tail -n 1)
+  mypwd=$(printf "$PWD" | sed "s|$HOME|~|g")
 
-  # print the current working directory and replace $HOME with ~
-  mypwd=$(printf "$PWD" | \
-    sed "s|$HOME|~|g")
-
-  # print the working directory with the color escapes in it
-  # to get rid of random color comment out lines 1,2,3,8
-  # line 6 prints date in the prompt, to get rid of it comment it out
-  # to remove color from the date put it after the line that prints "\e[0m"
-  printf '[1;30m'
-  # printf $promptcol
-  printf '[47m'
-  printf ' '
-  # printf $mypwd
-  printf '\w'
-  # printf " @ "
-  # printf $(date +%k:%M:%S)
-  printf ' '
-  # printf '\n'
-  # printf '%s' ">"
+  # printf '47m'
+  # printf ' '
+  printf "[1;35m%s[0m" $mypwd
+  printf '[1m'
+  printf ' ->'
+  # printf ' →' 
   printf "[0m"
 }
 
 
-# current prompt uses random color from shuf, to get no color or constant color comment out the line
-# "printf $promptcol" 
-# to set a constant color comment out the current prompt and uncomment the one above 
-# to add a background color to the prompt, uncomment the top one and change the number if you want
 # values for the bg color can be from 40-47
-# use the codes below to choose a color
 # color escape codes: black 0;30, blue 0;34, green 0;32, cyan 0;36, red 0;31, purple 0;35, brown 0;33
 # for dark colors replace 0 with 1
-
-# export PS1="\e[46m\ $(prompt) " 
-# export PS1="\e[1;34m\$(prompt)\e[0m> "
 export PS1="\$(prompt) " 
 export TERM="st-256color"
 alias startx="startx /home/lain/etc/x/xinitrc"
-alias volset="pactl set-sink-volume $SINK"
 alias lsal="exa -al"
 alias lsa="exa -a"
 alias lsl="exa -l"
@@ -51,7 +27,7 @@ alias lsalh="exa -alh"
 alias ls="exa"
 alias xbpi="doas xbps-install -S"
 alias xbpq="xbps-query -Rs"
-alias xbpr="doas xbps-remove"
+alias xbpr="doas xbps-remove -o"
 
 export EDITOR=nvim
 export VISUAL=$EDITOR

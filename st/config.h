@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fantasque Sans Mono:pixelsize=16:antialias=true:autohint=true";
-static int borderpx = 45;
+static char *font = "SF Mono:pixelsize=14:antialias=true:autohint=true";
+static int borderpx = 50;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -139,7 +139,7 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
+unsigned int defaultfg = 15;
 unsigned int defaultbg = 0;
 static unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 256;

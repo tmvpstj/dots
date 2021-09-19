@@ -3,7 +3,7 @@
 xrandr --output DisplayPort-1 --primary --mode 2560x1440 --rate 143.97 --pos 1920x0 --rotate normal --output DisplayPort-2 --mode 1920x1080 --rate 144.00 --pos 0x360 --rotate normal 
 picom &
 ~/bin/wlpset &
-xrdb -load ~/etc/x/xresources &
+xrdb -load ~/etc/x/xresources
 # ~/bin/bigbar.sh | lemonbar -g 2560x30+1920+0 -b -f "Fantasque Sans Mono:normal:size=10"| sh &
 # ~/bin/barcpu.sh | lemonbar -g 140x30+1285+15 -B '#101010' -b -f "SF Mono:normal:size=10" &
 pgrep -x sxhkd || sxhkd -c ~/etc/sxhkd/sxhkdrc &

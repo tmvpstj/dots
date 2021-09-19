@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -n $(pgrep -x herbe) ]
+if [ "$(pgrep -x herbe)" ]
 then
 	pkill herbe
 fi
@@ -8,17 +8,16 @@ fi
 
 case $1 in 
 	i)
-		pamixer -i $2
+		pamixer -i "$2"
 		;;
 	d)
-		pamixer -d $2
+		pamixer -d "$2"
 		;;
 	m)
 		pamixer -t
 		;;
 	*)
-		break
 		;;
 esac
 
-herbe volume $(pamixer --get-volume-human)
+herbe volume "$(pamixer --get-volume-human)"

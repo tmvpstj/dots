@@ -14,7 +14,7 @@ call plug#end()
 
 " set termguicolors
 set background=dark
-colorscheme rose-pine-dark
+colorscheme plain
 
 set nonumber
 syntax on

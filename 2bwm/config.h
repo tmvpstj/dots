@@ -13,13 +13,13 @@ static const float    resize_keep_aspect_ratio= 1.03;
 ///---Offsets---///
 /*0)offsetx          1)offsety
  *2)maxwidth         3)maxheight */
-static const uint8_t offsets[] = {4,4,0,0};
+static const uint8_t offsets[] = {0,0,0,0};
 ///---Colors---///
 /*0)focuscol         1)unfocuscol
  *2)fixedcol         3)unkilcol
  *4)fixedunkilcol    5)outerbordercol
  *6)emptycol         */
-static const char *colors[] = {"#aaaaaa","#1f1f1f","#287373","#8c4665","#7c7c99","#101010","#000000"};
+static const char *colors[] = {"#f8f8f8","#2f2f2f","#80a7d6","#ce468a","#afb0e8","#0e0e0e","#000000"};
 /* if this is set to true the inner border and outer borders colors will be swapped */
 static const bool inverted_colors = false;
 ///---Cursor---///
@@ -164,8 +164,8 @@ static key keys[] = {
     //unfold horizontally
     {  MOD |SHIFT|CONTROL,XK_n,          maxhalf,           {.i=TWOBWM_MAXHALF_UNFOLD_HORIZONTAL}},
     // Next/Previous screen
-    {  MOD ,              XK_comma,      changescreen,      {.i=TWOBWM_NEXT_SCREEN}},
-    {  MOD ,              XK_period,     changescreen,      {.i=TWOBWM_PREVIOUS_SCREEN}},
+    {  MOD ,              XK_period,      changescreen,      {.i=TWOBWM_NEXT_SCREEN}},
+    {  MOD ,              XK_comma,     changescreen,      {.i=TWOBWM_PREVIOUS_SCREEN}},
     // Raise or lower a window
     {  MOD ,              XK_r,          raiseorlower,      {}},
     // Next/Previous workspace
@@ -193,7 +193,7 @@ static key keys[] = {
     {  MOD |SHIFT,        XK_Right,      cursor_move,       {.i=TWOBWM_CURSOR_RIGHT}},
     {  MOD |SHIFT,        XK_Left,       cursor_move,       {.i=TWOBWM_CURSOR_LEFT}},
     // Start programs
-    {  MOD ,              XK_w,          start,             {.com = menucmd}},
+    //  {  MOD ,              XK_w,          start,             {.com = menucmd}},
     // Exit or restart 2bwm
     {  MOD |CONTROL,      XK_q,          twobwm_exit,       {.i=0}},
     {  MOD |CONTROL,      XK_r,          twobwm_restart,    {.i=0}},

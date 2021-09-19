@@ -1,7 +1,7 @@
 static const char *background_color = "#0e0e0e";
 static const char *border_color = "#c3dae0";
 static const char *font_color = "#c3dae0";
-static const char *font_pattern = "Fantasque Sans Mono:size=12";
+static const char *font_pattern = "IBM Plex Mono:size=10";
 static const unsigned line_spacing = 5;
 static const unsigned int padding = 15;
 

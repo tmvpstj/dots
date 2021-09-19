@@ -1,0 +1,5 @@
+#!/bin/sh
+
+exec mpv --no-audio-display \
+	--display-tags=-clr \
+	"$@" 
