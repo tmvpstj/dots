@@ -1,18 +1,14 @@
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
-" Plug 'scrooloose/nerdtree'
-" Plug 'fehawen/sl.vim'
 Plug 'fehawen/cs.vim'
-Plug 'Yggdroot/indentLine'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-commentary'
 Plug 'NerdyPepper/vim-colors-plain'
-Plug 'pbrisbin/vim-colors-off'
-Plug 'owickstrom/vim-colors-paramount'
 Plug 'axvr/photon.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'fehawen/sc.vim'
 " Plug 'sirver/ultisnips'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " set termguicolors
@@ -32,6 +28,7 @@ set ruler
 set autoindent
 set path+=**
 set mouse=a
+set cursorline
 set hidden
 set noswapfile
 set nobackup
@@ -70,14 +67,12 @@ vnoremap <S-Tab>	<<<Esc>gv
 nnoremap <C-b>	:Limelight!!<CR>
 nnoremap <C-g>	:Goyo<CR>
 
+map <C-n>	:NERDTreeToggle<CR>
+
 " ALE stuff
 let g:ale_sign_column_always = 0
 let g:ale_linters_explicit = 1
 " Linters for ALE to run
-" let g:ale_linters = {
-" \   'javascript': ['eslint'],
-" \}
-
 
 " Statusline stuff
 source $HOME/.vim/statusline.vim
