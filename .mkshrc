@@ -1,0 +1,31 @@
+bind '^L=clear-screen'
+# bind -m ^U='^[0^K'
+
+prompt() {
+  mypwd=$(printf "$PWD" | sed "s|$HOME|~|g")
+
+  # printf '47m;'
+  # printf ' '
+  printf "[1;35m%s[0m" $mypwd
+  printf '[1m'
+  printf ' >'
+  # printf ' →' 
+  printf "[0m"
+}
+
+
+# values for the bg color can be from 40-47
+# color escape codes: black 0;30, blue 0;34, green 0;32, cyan 0;36, red 0;31, purple 0;35, brown 0;33
+# for dark colors replace 0 with 1
+export PS1="\$(prompt) " 
+export TERM="st-256color"
+alias lsal="ls -al"
+alias lsa="ls -a"
+alias lsl="ls -l"
+alias lsalh="ls -alh"
+alias xbpi="doas xbps-install -S"
+alias xbpq="xbps-query -Rs"
+alias xbpr="doas xbps-remove -o"
+
+export EDITOR=vim
+export VISUAL=$EDITOR

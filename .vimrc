@@ -69,6 +69,11 @@ nnoremap <C-g>	:Goyo<CR>
 
 map <C-n>	:NERDTreeToggle<CR>
 
+" Goyo
+let g:goyo_width = "60%"
+let g:goyo_height = "90%"
+let g:goyo_linenr = 1
+
 " ALE stuff
 let g:ale_sign_column_always = 0
 let g:ale_linters_explicit = 1
