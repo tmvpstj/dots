@@ -35,8 +35,8 @@ za - toggle fold
 zc - close fold
 <space> - toggle fold (binding)
 
-,nt - toggle numbers btwn rnu and rnu!
-,st - toggle centering screen on cursor
++n - toggle numbers btwn rnu and rnu!
++t - toggle centering screen on cursor
 
 gaip - align entire paragraph around character following p
 vipga - same as above but for visual
