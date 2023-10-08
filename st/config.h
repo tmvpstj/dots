@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Berry:pixelsize=14:antialias=true:autohint=true";
+static char *font = "SF Mono:pixelsize=24:antialias=true:autohint=true";
 static int borderpx = 50;
 
 /*
