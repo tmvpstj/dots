@@ -13,8 +13,24 @@ endglobal
 
 snippet beg "begin{} / end{}" b
 \begin{$1}
-	$0
+    $0
 \end{$1}
+endsnippet
+
+snippet itm "item" b
+\item
+	$0
+endsnippet
+
+snippet itml "item with label" b
+\item[$1]
+	$0
+endsnippet
+
+snippet algn "align env" b
+\begin{align*}
+	$0
+\end{align*}
 endsnippet
 
 snippet bf "Boldface" 
@@ -25,18 +41,36 @@ snippet ital "Italic"
 \textit{$1}$0
 endsnippet
 
+snippet tx "text mode" w
+\text{$1}$0
+endsnippet
+
+snippet intx "intertext mode" w
+\intertext{$1}$0
+endsnippet
+
+snippet sintx "intertext mode" w
+\intertext{$1}$0
+endsnippet
+
+snippet tbl "tabular" b
+\begin{tabular}{$1}
+	$0
+\end{tabular}
+endsnippet
+
+snippet hl "hline" w
+\hline
+$0
+endsnippet
+
 snippet today "Date"
 `date +%F`
 endsnippet
 
 priority 10
 snippet mk "Math" wA
-$${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-	snip.rv = ' '
-else:
-	snip.rv = ''
-`$2
+$${1}$$2
 endsnippet
 
 priority 10
@@ -51,30 +85,30 @@ snippet // "Fraction" iA
 \\frac{$1}{$2}$0
 endsnippet
 
-# context "math()"
-# snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
-# \\frac{`!p snip.rv = match.group(1)'}{$1}$0
-# endsnippet
-
 context "math()"
-snippet / "Fraction" iA
-\\frac{${VISUAL}}{$1}$0
+snippet / "Fraction" i
+\\frac{$1}{$2}$0
 endsnippet
 
 context "math()"
-snippet "bar" "bar" riA
+snippet "ovr" "overline" ri
 \overline{$1}$0
+endsnippet
+
+context "math()"
+snippet "bar" "bar" ri
+\bar{$1}$0
 endsnippet
 
 priority 100
 context "math()"
-snippet "ci" "subset" riA
+snippet "ci" "subset" ri
 \subset
 endsnippet
 
 priority 100
 context "math()"
-snippet "ce" "subseteq" riA
+snippet "ce" "subseteq" ri
 \subseteq
 endsnippet
 
@@ -88,4 +122,19 @@ priority 100
 context "math()"
 snippet "!" "not" ri
 \neg
+endsnippet
+
+context "math()"
+snippet "setb" "subseteq" ri
+\\{$1 \:|\: $2\\}$0
+endsnippet
+
+context "math()"
+snippet "mbb" "mathbb" ri
+\mathbb{$1}$0
+endsnippet
+
+context "math()"
+snippet "set" "set" ri
+\\{$1\\}$0
 endsnippet

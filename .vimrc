@@ -31,6 +31,7 @@ set ruler
 set autochdir
 
 set autoindent
+set smartindent
 set path+=**
 set mouse=a
 set cursorline
@@ -44,8 +45,10 @@ set splitbelow
 set splitright
 set foldmethod=indent
 set nofoldenable
-set shiftwidth=4
 set timeoutlen=400
+set tabstop=4
+set shiftwidth=0
+" set expandtab
 
 " autocmds 
 augroup numbertoggle
@@ -94,8 +97,8 @@ vnoremap <Tab>		>><Esc>gv
 vnoremap <S-Tab>	<<<Esc>gv
 
 nnoremap <space> za
-nnoremap oo o<Esc>
-nnoremap OO O<Esc>j
+nnoremap so o<Esc>
+nnoremap sO O<Esc>j
 
 nnoremap <C-b>	:Limelight!!<CR>
 nnoremap <C-g>	:Goyo<CR>
@@ -117,8 +120,6 @@ let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = 'sumatraPDF'
 let g:vimtex_view_general_options = '-reuse-instance @pdf'
 " let g:vimtex_view_compiler_latexmk
-" let g:vimtex_view_method = 'skim'
-" let g:vimtex_view_skim_activate = 1
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<tab>'
