@@ -1,39 +1,123 @@
-b - move to start of word
-B - move to start of token
-e - move to end of word
-E - move to end of token
+Movements:
+	b - move backwards to start of word
+	B - move backwards to start of token
+	e - move to end of word
+	E - move to end of token
+	ge - move backwards to end of word
+	gE - move backwards to end of token
+	% - move to matching character of pair (e.g. (), [], {})
+	aw - entire word with surrounding space (useful for deleting word without leaving space)
 
-u - change character/selection to lowercase
-U - change character/selection to uppercase
+	<C-e> - move screen down 1 line without moving cursor
+	<C-y> - move screen up 1 line without moving cursor
+	<C-b> - move screen up one page
+	<C-f> - move screen down one page
+	<C-d> - move screen up 1/2 page
+	<C-u> - move screen down 1/2 page
 
-ea - append to end of word
+	{ - jump to previous paragraph
+	} - jump to last paragraph
 
-m[a-z] - add mark with chosen letter
-'[a-z] - jump to mark
-'. - jump to last change
-'0 - jump to where vim was last exited
-'' - jump to last jump
-:marks - list all marks
+	m[a-z] - add mark with chosen letter
+	'[a-z] - jump to mark
+	'. - jump to last change
+	'0 - jump to where vim was last exited
+	'' - jump to last jump
+	:marks - list all marks
 
-q[a-z] - record macro
-q - stop recording macro
-@[a-z] - run macro
+	/pattern - search for pattern
+	n - advance to next found pattern
+	N - move to last found pattern
 
-"[a-z] - prefix to access register [a-z]
-"" - default register
-"[0-9] - past yanks, newest to oldest
-". - last inserted text
-"% - current file path, from dir vim was started in
-": - most recently executed command
-"= - result of last expr
+Editing:
+	u - change character/selection to lowercase
+	U - change character/selection to uppercase
+	sj - join current line with next with one space in between
+	gj - join current line with next with no space in between
+	gw[motion] - reflow section (i.e. join lines)
+	gwip - reflow paragraph
+	gu[motion] - convert movement to lowercase
+	gU[motion] - convert movement to uppercase
+	~ - toggle case of character under cursor
+	>% - indent a block in () or {} with cursor on delim
+	<% - de-indent a block in () or {} with cursor on delim
+	>ib - indent inner block in ()
+	>iB - indent inner block in {}
+	=% - re-indent block in () or {} with cursor on brace
+	=iB - re-indent inner block with {}
+	]p - paste and adjust indent
+	:%s/old/new/g - replace old with new globally
+	:%s/old/new/gc - replace old with new globally with confirmation
+	<c-r> - redo
 
-<c-r> - redo
+Windows/tabs:
+	<C-w>T - move current split window into new tab
+	#gt - move to tab #
+	:tabdo - run command on all tabs
+	:tabc - close current tab
+	:tabm # - move tab to position #
+	:sp file - open file in new buffer and split hor.
+	:vs file - open file in new buffer and split vert.
+	:vert ba - edit all buffers as vertical windows
+	:tab ba - edit all buffers as tabs
+	<C-w>s - split window hor.
+	<C-w>v - split window vert.
+	<C-w>w - switch windows
+	<C-w>q - quit window
+	<C-w>x - exchange current window with next
+	<C-w>= - make all windows equal height and width
+	<C-w>H - make current window full height at far left
+	<C-w>L - make current window full height at far right
+	<C-w>J - make current window full height at bottom
+	<C-w>K - make current window full height at top
 
-zfap - add entire paragraph to fold
-zo - open fold
-za - toggle fold
-zc - close fold
-<space> - toggle fold (binding)
+Insert mode:
+	ea - append to end of word
+	<C-h> - delete character before cursor in insert
+	<C-w> - delete word before cursor in insert
+	<C-j> - add line break at cursor position
+	<C-t> - indent in insert
+	<C-d> - de-indent in insert
+	<C-o>x - temporarily enter normal mode to issue command x
+
+Visual mode:
+	o - move to other end of marked area
+	aw - mark a word
+	ab - mark a block in ()
+	aB - mark a block in {}
+	at - a block with <>
+	ib - inner block with ()
+	iB - inner block with {}
+	it - inner block with <>
+	~ - switch case of selected text
+
+Macros and registers:
+	q[a-z] - record macro
+	q - stop recording macro
+	@[a-z] - run macro
+
+	"[a-z] - prefix to access register [a-z]
+	"" - default register
+	"[0-9] - past yanks, newest to oldest
+	". - last inserted text
+	"% - current file path, from dir vim was started in
+	": - most recently executed command
+	"= - result of last expr
+	"+y - yank to system clipboard
+	"+p - paste from system clipboard
+
+Folds:
+	zfap - add entire paragraph to fold
+	zd - delete fold under cursor
+	zo - open fold
+	za - toggle fold
+	zc - close fold
+	<space> - toggle fold (binding)
+	zr - open all folds by one level
+	zm - close all folds by one level
+	zi - toggle folding functionality
+	zM - close all folds of all depths
+	zR - open all folds
 
 +n - toggle numbers btwn rnu and rnu!
 +t - toggle centering screen on cursor

@@ -86,6 +86,8 @@ noremap J	}
 noremap H	^
 noremap L	$
 
+nnoremap sJ	J
+
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -100,7 +102,7 @@ nnoremap <space> za
 nnoremap so o<Esc>
 nnoremap sO O<Esc>j
 
-nnoremap <C-b>	:Limelight!!<CR>
+nnoremap <C-s>	:Limelight!!<CR>
 nnoremap <C-g>	:Goyo<CR>
 
 map <C-n>	:NERDTreeToggle<CR>
