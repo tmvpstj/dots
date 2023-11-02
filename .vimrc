@@ -8,16 +8,16 @@ Plug 'NerdyPepper/vim-colors-plain'
 Plug 'axvr/photon.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'fehawen/sc.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'sirver/ultisnips'
 Plug 'junegunn/vim-easy-align'
+Plug 'sonph/onehalf', {'rtp': 'vim'}
 call plug#end()
 
 set termguicolors
 set background=light
-colorscheme habiMath
+colorscheme onehalflight
 
 set number relativenumber 
 syntax on
@@ -45,9 +45,10 @@ set splitbelow
 set splitright
 set foldmethod=indent
 set nofoldenable
-set timeoutlen=400
+set timeoutlen=700
 set tabstop=4
 set shiftwidth=0
+set conceallevel=2
 " set expandtab
 
 " autocmds 
@@ -57,8 +58,17 @@ augroup numbertoggle
 	autocmd BufLeave,FocusLost,InsertEnter,WinLeave		* if &nu | set nornu | endif
 augroup END
 
+augroup MyColors
+	autocmd!
+	autocmd ColorScheme * highlight clear Conceal
+augroup END
+
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+if empty(v:servername) && exists('*remote_startserver')
+	  call remote_startserver('VIM')
+endif
 
 " Functions
 function! ScrollOffToggle()
@@ -78,6 +88,8 @@ function! NumberToggle()
 endfunc
 
 " Keybinds
+let maplocalleader = "Y"
+
 nnoremap +s 	:call ScrollOffToggle()<cr>
 nnoremap +n 	:call NumberToggle()<cr>
 
@@ -92,6 +104,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <lt> <C-W><lt>
+nnoremap > <C-W>>
+nnoremap - <C-W>-
+nnoremap + <C-W>+
 
 nnoremap <Tab>		>>
 nnoremap <S-Tab>	<<
@@ -102,26 +118,38 @@ nnoremap <space> za
 nnoremap so o<Esc>
 nnoremap sO O<Esc>j
 
+imap "<tab> ""<Left>
+imap '<tab> ''<Left>
+imap (<tab> ()<Left>
+imap [<tab> []<Left>
+imap {<tab> {}<Left>
+imap {<CR> {<CR>}<ESC>O
+imap {;<CR> {<CR>};<ESC>O
+
 nnoremap <C-s>	:Limelight!!<CR>
 nnoremap <C-g>	:Goyo<CR>
 
 map <C-n>	:NERDTreeToggle<CR>
 
+nmap <localleader>v <plug>(vimtex-view)
+
 " Goyo
-let g:goyo_width = "80%"
+let g:goyo_width = "90%"
 let g:goyo_height = "90%"
 let g:goyo_linenr = 1
 
+" Limelight
+let g:limelight_conceal_ctermfg = 7
+
 " ALE stuff
-let g:ale_sign_column_always = 0
+let g:ale_sign_column_always = 1
 let g:ale_linters_explicit = 1
 " Linters for ALE to run
 
 " Vimtex
 let g:tex_flavor = 'latex'
-let g:vimtex_view_general_viewer = 'sumatraPDF'
+let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_options = '-reuse-instance @pdf'
-" let g:vimtex_view_compiler_latexmk
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -136,6 +164,6 @@ nmap ga <Plug>(EasyAlign)
 " Statusline stuff
 source $HOME/.vim/statusline.vim
 hi bl ctermfg=8
-hi gr ctermfg=7
+hi gr ctermfg=8
 set laststatus=2
 set rulerformat=%30(%=%#bl#%l,%c\ \%#bl#%p%%\ \ %#gr#%t%)

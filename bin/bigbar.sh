@@ -2,7 +2,7 @@
 
 Clock() {
 	TIME=$(date +%I:%M:%S)
-	DATE=$(date +%a\ %m/%d/%y)
+	DATE=$(date "+%a, %b %d")
 
 	echo -n "$TIME on $DATE"
 }
@@ -16,7 +16,13 @@ volume() {
 		REALVOLUME=$(pamixer --get-volume-human)
 	fi
 
-	echo -n "volume $REALVOLUME"
+	echo -n "$REALVOLUME"
+}
+
+tags() {
+	for i in 0 1 2 3 4 5 6 7 8 9; do
+		printf "%s" "%{A: herbstclient use_index $i:} $(($i+1)) %{A} ";
+	done
 }
 
 # wifi() {
@@ -27,6 +33,9 @@ volume() {
 # }
 
 while true; do
-	echo "%{l}%{F#f8f8f8}%{B#0e0e0e} %{A:rofi -show drun:} rofi %{A}                                                                                                                                                                                                                                                                                                                           $(Clock) | $(volume)    %{F-}%{B-}"
-	sleep .1
+	echo "%{F#f8f8f8}%{B#0e0e0e} %{l}%{A:rofi -show drun:}  %{A} \
+	$(tags) \
+	%{A:herbstclient floating toggle:} F %{A} \
+	%{r} $(Clock) |%{A4:pamixer -i 5:}%{A5:pamixer -d 5:}  $(volume) %{A}%{A}%{F-}%{B-}"
+	sleep .5
 done

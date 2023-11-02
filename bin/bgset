@@ -41,6 +41,14 @@ case $1 in
 		wlpscript
 		echo "hsetroot -solid '$2'" >> "$HOME"/bin/wlpset
 		;;
+	-p)
+		# IMAGE PICKER
+		IMAGE_NAME="$(sxiv -o $3)"
+		hsetroot -$2 $(realpath $IMAGE_NAME) >> /dev/null
+		wlpscript
+		echo "$0" "-h" "$2" "$(realpath $IMAGE_NAME)" >> "$HOME"/bin/wlpset
+		;;
+		
 	*)
 		cat <<- 'END_TEXT'
 		options: 

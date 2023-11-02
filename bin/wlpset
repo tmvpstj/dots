@@ -1,2 +1,2 @@
 #!/bin/sh
-/home/lain/bin/bgset -h cover /home/lain/wlp/snow_FHD.jpg
+/home/lain/bin/bgset -h tile /home/lain/wlp/classic-mac-os-tile-wallpapers-2.png

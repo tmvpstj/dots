@@ -1,5 +1,5 @@
 XTerm*saveLines: 4096
-xterm*faceName: tamzen:size=12:antialias=true
+xterm*faceName: Julia Mono:size=12:antialias=true
 
 xterm*termName: xterm-256color
 xterm*scaleHeight: 1.0
@@ -22,7 +22,7 @@ xterm*translations: #override \n\
     
 ! URxvt stuff
 
-URxvt.font: xft:IBM Plex Mono:size=10:antialias=true
+URxvt.font: xft:Julia Mono:size=12:antialias=true
 URxvt.scrollBar: false
 URxvt.internalBorder: 55
 URxvt.geometry: 72x24
@@ -36,43 +36,46 @@ URxvt.iso14755: false
 URxvt.termName: xterm-256color
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: true
-URxvt.borderColor: #0e0e0e
+URxvt.borderColor: #f9f9f9
 
-! Colorscheme is modified from jcs
+! colorscheme from jcs
+#define BG			#f9f9f9
+#define FG			#444444
+*.background:			BG
+*.foreground:			FG
 
-*.background: #101010
-*.foreground: #eae5ce
+*.borderColor:			BG
 
 ! black
-*.color0:  #101010
-*.color8:  #494949
+*.color0:			FG
+*.color8:			#333333
 
 ! red
-*.color1:  #dc322f
-*.color9:  #cb4b16
+*.color1:			#dc322f
+*.color9:			#cb4b16
 
 ! green
-*.color2:  #859900
-*.color10: #93a1a1
+*.color2:			#859900
+*.color10:			#93a1a1
 
 ! yellow
-*.color3:  #b58900
-*.color11: #839496
+*.color3:			#b58900
+*.color11:			#839496
 
 ! blue
-*.color4:  #268bd2
-*.color12: #657b83
+*.color4:			#268bd2
+*.color12:			#657b83
 
 ! magenta
-*.color5:  #d33682
-*.color13: #6c71c4
+*.color5:			#d33682
+*.color13:			#6c71c4
 
 ! cyan
-*.color6:  #2aa198
-*.color14: #586e75
+*.color6:			#2aa198
+*.color14:			#586e75
 
-! white
-*.color7:  #d9d7cc
-*.color15: #e5e5e5
+! white (gray)
+*.color7:			#d9d7cc
+*.color15:			#f9f9f9
 
 ! vim: ft=xdefaults
