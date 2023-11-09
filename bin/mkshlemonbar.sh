@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/mksh
 
 herbstclient -i |
 while read line; do
@@ -14,7 +14,7 @@ while read line; do
     tag_changed*)
 		wm_infos=()
 		TAGS=( $(herbstclient tag_status) )
-        for i in "${TAGS[@]}" ; do
+		for i in "${TAGS[@]}" ; do
 		# if [[ $i != *8 ]]; then
 			index=${i:1:1}
 			case ${i:0:1} in
@@ -35,9 +35,10 @@ while read line; do
 
 			esac
 			wm_infos=${wm_infos}
+			# wm_infos="${wm_infos}%{F${FG}}${ICON}%{F-}"
 		# fi
-		shift
-        done
+		# shift
+		done
 		if [[ "$(herbstclient floating status)" == "off" ]]; then
 			float="○"
 		else

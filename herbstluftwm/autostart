@@ -22,7 +22,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-e quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-q close
-hc keybind $Mod-Return spawn "${TERMINAL:-st}" # use your $TERMINAL with xterm as fallback
+hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-d spawn rofi -show drun
 hc keybind $Mod-w spawn rofi -show window
 hc keybind $Mod-Alt-t spawn datenoti
@@ -137,7 +137,7 @@ hc set frame_transparent_width 0
 hc set frame_gap 8
 
 hc attr theme.title_height 13
-hc attr theme.title_when multiple_tabs
+hc attr theme.title_when never
 hc attr theme.title_font 'Julia Mono:pixelsize=12'  # example using Xft
 # hc attr theme.title_font '-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
 hc attr theme.title_depth 3  # space below the title's baseline

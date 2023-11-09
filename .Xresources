@@ -1,5 +1,5 @@
 XTerm*saveLines: 4096
-xterm*faceName: Julia Mono:size=12:antialias=true
+xterm*faceName: Iosevka Term:size=13:antialias=true
 
 xterm*termName: xterm-256color
 xterm*scaleHeight: 1.0
@@ -34,7 +34,7 @@ URxvt.urgentOnBell: false
 URxvt.depth: 24
 URxvt.iso14755: false
 URxvt.termName: xterm-256color
-URxvt.cursorBlink: true
+URxvt.cursorBlink: false
 URxvt.cursorUnderline: true
 URxvt.borderColor: #f9f9f9
 
@@ -79,3 +79,4 @@ URxvt.borderColor: #f9f9f9
 *.color15:			#f9f9f9
 
 ! vim: ft=xdefaults
+!

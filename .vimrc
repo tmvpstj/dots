@@ -43,13 +43,13 @@ scriptencoding utf-8
 set fileencoding=utf-8
 set splitbelow
 set splitright
-set foldmethod=indent
+set foldmethod=expr
 set nofoldenable
 set timeoutlen=700
-set tabstop=4
+set tabstop=2
 set shiftwidth=0
 set conceallevel=2
-" set expandtab
+set expandtab
 
 " autocmds 
 augroup numbertoggle
@@ -88,10 +88,11 @@ function! NumberToggle()
 endfunc
 
 " Keybinds
-let maplocalleader = "Y"
+let maplocalleader = ","
+let mapleader = "\<space>"
 
-nnoremap +s 	:call ScrollOffToggle()<cr>
-nnoremap +n 	:call NumberToggle()<cr>
+nnoremap <leader>s 	:call ScrollOffToggle()<cr>
+nnoremap <leader>n 	:call NumberToggle()<cr>
 
 noremap K	{
 noremap J	}
@@ -114,7 +115,7 @@ nnoremap <S-Tab>	<<
 vnoremap <Tab>		>><Esc>gv
 vnoremap <S-Tab>	<<<Esc>gv
 
-nnoremap <space> za
+" nnoremap <space> za
 nnoremap so o<Esc>
 nnoremap sO O<Esc>j
 
@@ -126,11 +127,13 @@ imap {<tab> {}<Left>
 imap {<CR> {<CR>}<ESC>O
 imap {;<CR> {<CR>};<ESC>O
 
+
 nnoremap <C-s>	:Limelight!!<CR>
 nnoremap <C-g>	:Goyo<CR>
 
 map <C-n>	:NERDTreeToggle<CR>
 
+noremap <localleader>w :w<CR>
 nmap <localleader>v <plug>(vimtex-view)
 
 " Goyo
@@ -150,6 +153,10 @@ let g:ale_linters_explicit = 1
 let g:tex_flavor = 'latex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_options = '-reuse-instance @pdf'
+let g:vimtex_fold_enabled = 1
+set foldexpr=vimtex#fold#level(v:lnum)
+set foldtext=vimtex#fold#text()
+set indentexpr=VimtexIndent()
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<tab>'
