@@ -30,6 +30,14 @@ while read line; do
 				wm_infos+="%{A:herbstclient use_index $(($index-1)):}%{F#666666} ${i:1:1} %{F-}%{A}"
 				;;
 			
+			'-'*) # tag is viewed on other, unfocused monitor
+				wm_infos+="%{+u}%{A:herbstclient use_index $(($index-1)):}%{F#b0b0ff} ${i:1:1} %{F-}%{A}%{-u}"
+				;;
+
+			'%'*) # tag is viewed on other, focused monitor
+				wm_infos+="%{A:herbstclient use_index $(($index-1)):}%{F#b0b0ff} ${i:1:1} %{F-}%{A}"
+				;;
+
 			*)
 				;;
 
